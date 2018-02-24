@@ -1,18 +1,29 @@
-let webpack = require('webpack');
+var webpack = require('webpack');
+var merge = require('webpack-merge')
+var baseWebpackConfig = require('./webpack.base.conf');
+var settings = require('./defaults');
 
-let baseConfig = require('./webpack.base.conf');
-let settings = require('./defaults');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let HtmlWebpackPlugin = require('html-webpack-plugin')
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-let config = Object.assign({}, baseConfig, {
+module.exports = merge(baseWebpackConfig, {
+  module: {
+    rules: [
+      {
+        test: /\.(less|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', `less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
+        })
+      }
+    ]
+  },
   devtool: settings.build.sourceMap,
   plugins: [
     new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': settings.build.env
-        }
+      'process.env': {
+        'NODE_ENV': settings.build.env
+      }
     }),
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.UglifyJsPlugin(),
@@ -22,7 +33,7 @@ let config = Object.assign({}, baseConfig, {
       filename: 'index.html',
       template: settings.common.srcPath + '/index.html',
       inject: true,
-        minify: {
+      minify: {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
@@ -31,12 +42,3 @@ let config = Object.assign({}, baseConfig, {
   ]
 });
 
-config.module.rules.push({
-  test: /\.(less|css)$/,
-  use:  ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader',`less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
-        })
-})
-
-module.exports = config;

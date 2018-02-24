@@ -36,7 +36,7 @@ const BaseLayout = ({ isLogin, checkLogin }) => (
                 </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
-                xxx ©2018 Created by ehr-zp
+                xxxX
             </Footer>
         </Layout>
     </div>

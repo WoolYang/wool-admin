@@ -1,4 +1,4 @@
-const settings = require('./defaults');
+var settings = require('./defaults');
 
 module.exports = {
   entry: settings.common.entryPath,
@@ -22,11 +22,11 @@ module.exports = {
   },
   module: {
     rules: [
-			{
-				test: /\.(js|jsx)$/,
-				enforce: 'pre',
-				include: settings.common.srcPath,
-				use: 'eslint-loader'
+      {
+        test: /\.(js|jsx)$/,
+        enforce: 'pre',
+        include: settings.common.srcPath,
+        use: 'eslint-loader'
       },
       {
         test: /\.(js|jsx)$/,
@@ -36,14 +36,14 @@ module.exports = {
           [settings.common.srcPath]
         )
       },
-			{
-				test: /\.(png|jpg|gif|woff|woff2)$/,
-				use: 'url-loader?limit=8192'
-			},
-			{
-				test: /\.(mp4|ogg|svg)$/,
-				use: 'file-loader'
-			}
+      {
+        test: /\.(png|jpg|gif|woff|woff2)$/,
+        use: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(mp4|ogg|svg)$/,
+        use: 'file-loader'
+      }
     ]
   }
 };

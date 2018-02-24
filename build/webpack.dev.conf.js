@@ -1,15 +1,24 @@
-let webpack = require('webpack');
-let baseConfig = require('./webpack.base.conf');
-let settings = require('./defaults');
+var webpack = require('webpack');
+var merge = require('webpack-merge')
+var baseWebpackConfig = require('./webpack.base.conf');
+var settings = require('./defaults');
 
-let HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-let config = Object.assign({}, baseConfig, {
+module.exports = merge(baseWebpackConfig, {
+  module: {
+    rules: [
+      {
+        test: /\.(less|css)$/,
+        use: ['style-loader', 'css-loader', `less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
+      }
+    ]
+  },
   devtool: settings.dev.sourceMap,
   devServer: {
     contentBase: './src/',
     historyApiFallback: true,
-    inline:true,
+    inline: true,
     hot: true,
     port: settings.dev.port,
     publicPath: settings.dev.assetsPublicPath
@@ -17,7 +26,7 @@ let config = Object.assign({}, baseConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV':  settings.dev.env
+        'NODE_ENV': settings.dev.env
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
@@ -29,10 +38,3 @@ let config = Object.assign({}, baseConfig, {
     })
   ]
 });
-
-config.module.rules.push({
-  test: /\.(less|css)$/,
-  use: ['style-loader','css-loader',`less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
-})
-
-module.exports = config;

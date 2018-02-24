@@ -9,12 +9,12 @@ const WebpackDevServer = require('webpack-dev-server');
 const settings = require('./build/defaults'); //参数配置文件
 
 let webpackConfig;
-if(env ==='dev'){
+if (env === 'dev') {
   webpackConfig = require('./build/webpack.dev.conf');
-  let devServer  = 'webpack-dev-server/client?http://127.0.0.1:' + settings.dev.port;
+  let devServer = 'webpack-dev-server/client?http://127.0.0.1:' + settings.dev.port;
   let hotDevServer = 'webpack/hot/dev-server';
-  webpackConfig.entry = ['react-hot-loader/patch',devServer, hotDevServer, webpackConfig.entry];
-  
+  webpackConfig.entry = ['react-hot-loader/patch', devServer, hotDevServer, webpackConfig.entry];
+
   let isInitialCompilation = true;
 
   const compiler = webpack(webpackConfig);
@@ -29,7 +29,6 @@ if(env ==='dev'){
 
   compiler.plugin('done', () => {
     if (isInitialCompilation) {
-      // Ensures that we log after webpack printed its stats (is there a better way?)
       setTimeout(() => {
         console.log('\n✓ The bundle is now ready for serving!\n');
         console.log('  Open in iframe mode:\t\x1b[33m%s\x1b[0m', 'http://localhost:' + settings.dev.port + '/webpack-dev-server/');
@@ -40,6 +39,6 @@ if(env ==='dev'){
     isInitialCompilation = false;
   });
 
-}else{
- // webpackConfig = require('./build/webpack.prod.conf');
+} else {
+  // webpackConfig = require('./build/webpack.prod.conf');
 }
