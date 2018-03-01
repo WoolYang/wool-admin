@@ -13,7 +13,7 @@ module.exports = merge(baseWebpackConfig, {
         test: /\.(less|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', `less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
+          use: ['css-loader', 'postcss-loader', 'less-loader']
         })
       }
     ]

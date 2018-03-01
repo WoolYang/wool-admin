@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
 import { checkLogin } from '../actions/index';
 import PropTypes from 'prop-types'
-//import { locale } from '../../node_modules/.2.20.1@moment';
 const FormItem = Form.Item;
 require('styles//Login.less');
 
@@ -47,14 +46,14 @@ class componentName extends Component {
               rules: [{ required: true, message: 'Please input your username!' }],
             })(
               <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-            )}
+              )}
           </FormItem>
           <FormItem>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: 'Please input your Password!' }],
             })(
               <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-            )}
+              )}
           </FormItem>
           <FormItem>
             {getFieldDecorator('remember', {
@@ -62,7 +61,7 @@ class componentName extends Component {
               initialValue: true,
             })(
               <Checkbox>Remember me</Checkbox>
-            )}
+              )}
             <a className="login-form-forgot" href="">Forgot password</a>
             <Button type="primary" htmlType="submit" className="login-form-button">
               登 录

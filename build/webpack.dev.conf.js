@@ -10,7 +10,7 @@ module.exports = merge(baseWebpackConfig, {
     rules: [
       {
         test: /\.(less|css)$/,
-        use: ['style-loader', 'css-loader', `less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
+        use: ['style-loader', 'css-loader', 'postcss-loader', `less-loader?{modifyVars:${JSON.stringify(settings.common.theme)}}`]
       }
     ]
   },
