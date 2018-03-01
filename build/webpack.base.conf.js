@@ -17,7 +17,7 @@ module.exports = {
       sources: `${settings.common.srcPath}/sources/`,
       stores: `${settings.common.srcPath}/stores/`,
       styles: `${settings.common.srcPath}/styles/`,
-      config: `${settings.common.srcPath}/config/` + process.env.NODE_ENV //React 15.4.0 已经把 ReactMount.js 移到 react-dom 下了，不要去直接依赖 lib 里的文件。
+      config: `${settings.common.srcPath}/config/` + process.env.NODE_ENV
     }
   },
   module: {

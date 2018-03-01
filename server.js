@@ -13,7 +13,7 @@ if (env === 'dev') {
   webpackConfig = require('./build/webpack.dev.conf');
   let devServer = 'webpack-dev-server/client?http://127.0.0.1:' + settings.dev.port;
   let hotDevServer = 'webpack/hot/dev-server';
-  webpackConfig.entry = ['react-hot-loader/patch', devServer, hotDevServer, webpackConfig.entry];
+  webpackConfig.entry = [devServer, hotDevServer, webpackConfig.entry];
 
   let isInitialCompilation = true;
 
