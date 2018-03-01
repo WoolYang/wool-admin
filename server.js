@@ -1,7 +1,6 @@
 /*eslint no-console:0 */
 'use strict';
-//初始化环境变量
-const env = process.env.NODE_ENV || 'dev';
+const env = process.env.NODE_ENV || 'dev'; //初始化环境变量
 //process.env.REACT_WEBPACK_ENV = env;
 
 const webpack = require('webpack');

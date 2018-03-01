@@ -23,7 +23,7 @@ const BaseLayout = ({ isLogin, checkLogin }) => (
                     defaultSelectedKeys={['2']}
                     style={{ lineHeight: '64px', color: '#fff' }}
                 >
-                    <Menu.Item key="1">xxx平台1234</Menu.Item>
+                    <Menu.Item key="1">xxx平台12345</Menu.Item>
                 </Menu>
             </Header>
             <Content style={{ padding: '40px 50px' }}>
