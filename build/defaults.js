@@ -5,7 +5,7 @@ module.exports = {
 		entryPath: path.join(__dirname, '../src/index'), //入口文件路径
 		srcPath: path.join(__dirname, '/../src'), //src根目录路径
 		assetsRoot: path.join(__dirname, '/../dist/assets'), //出口文件路径
-		theme: require('../src/styles/antd-theme') //主题文件
+		//theme: require('../src/styles/antd-theme') //主题文件
 	},
 	build: {
 		env: '"prod"', //环境变量

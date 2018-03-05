@@ -11,7 +11,6 @@ const { Header, Content, Footer } = Layout;
 import * as Actions from '../actions'
 import Routes from '../routes/index';
 
-require('styles/App.less');
 const BaseLayout = ({ isLogin, checkLogin }) => (
     <div>
         <Layout className="layout">
