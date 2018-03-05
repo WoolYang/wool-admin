@@ -73,8 +73,4 @@ class componentName extends Component {
   }
 }
 
-// Uncomment properties you need
-// LoginComponent.propTypes = {};
-// LoginComponent.defaultProps = {};
-
-export default Form.create()(componentName) 
+export default Form.create()(componentName);

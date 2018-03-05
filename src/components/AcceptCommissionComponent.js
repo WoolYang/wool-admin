@@ -10,6 +10,4 @@ const AcceptCommissionComponent = () => (
   </div>
 );
 
-AcceptCommissionComponent.displayName = 'AcceptCommissionComponent';
-
 export default AcceptCommissionComponent;
