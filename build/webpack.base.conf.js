@@ -1,4 +1,4 @@
-var settings = require('./defaults');
+var settings = require('./settings');
 
 module.exports = {
   entry: settings.common.entryPath,

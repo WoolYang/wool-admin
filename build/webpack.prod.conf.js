@@ -1,7 +1,8 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf');
-var settings = require('./defaults');
+var settings = require('./settings');
+var utils = require('./utils');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -11,10 +12,7 @@ module.exports = merge(baseWebpackConfig, {
     rules: [
       {
         test: /\.(less|css)$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'less-loader']
-        })
+        use: utils.generatorStyle()
       }
     ]
   },

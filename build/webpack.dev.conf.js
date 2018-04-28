@@ -1,7 +1,8 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf');
-var settings = require('./defaults');
+var settings = require('./settings');
+var utils = require('./utils');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -10,7 +11,7 @@ module.exports = merge(baseWebpackConfig, {
     rules: [
       {
         test: /\.(less|css)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+        use: utils.generatorStyle('dev')
       }
     ]
   },

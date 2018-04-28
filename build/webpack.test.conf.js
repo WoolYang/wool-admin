@@ -1,7 +1,7 @@
 let path = require('path');
 let srcPath = path.join(__dirname, '/../src/');
 
-let settings = require('./defaults');
+let settings = require('./settings');
 
 module.exports = {
   devtool: 'eval',

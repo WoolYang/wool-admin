@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV || 'dev'; //初始化环境变量
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const settings = require('./build/defaults'); //参数配置文件
+const settings = require('./build/settings'); //参数配置文件
 
 let webpackConfig;
 if (env === 'dev') {
