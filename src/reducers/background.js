@@ -4,21 +4,21 @@
 /**
  * Created by Administrator on 2018-2.
  */
-import { CHECK_LOGIN } from '../constants/ActionTypes'
+import { CHECK_LOGIN } from '../constants/ActionTypes';
 
 const initialState = {
-  isLogin: false
-}
+    isLogin: false
+};
 
 const background = (state = initialState, action) => {
-  switch (action.type) {
+    switch (action.type) {
     case CHECK_LOGIN:
-      return {
-        ...state,
-        isLogin: true
-      }
+        return {
+            ...state,
+            isLogin: true
+        };
     default:
-      return state
-  }
-}
-export default background
+        return state;
+    }
+};
+export default background;

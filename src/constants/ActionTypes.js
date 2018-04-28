@@ -1,8 +1,3 @@
-
-/**
- * @author allen zhang
- */
-
 export const CHECK_LOGIN = 'CHECK_LOGIN' //判断是否登录
 
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'

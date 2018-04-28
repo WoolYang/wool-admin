@@ -1,4 +1,4 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.generatorStyle = function (flag) {
     var prodStyle = ExtractTextPlugin.extract({
@@ -14,7 +14,7 @@ exports.generatorStyle = function (flag) {
             loader: 'less-loader',
             options: { javascriptEnabled: true }
         }]
-    })
+    });
 
     var devStyle = [{
         loader: 'style-loader'
@@ -28,8 +28,9 @@ exports.generatorStyle = function (flag) {
     }, {
         loader: 'less-loader',
         options: { javascriptEnabled: true }
-    }]
+    }];
+
     return flag === 'dev'
         ? devStyle
-        : prodStyle
-}
+        : prodStyle;
+};
