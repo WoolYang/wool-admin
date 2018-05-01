@@ -27,11 +27,8 @@ module.exports = {
   ],
   "rules": {
     "indent": ["error", 4], //缩进
+    "no-unused-vars":"warn",
     "strict": 0,  //严格模式
-    "linebreak-style": [  //使用一致的换行风格
-      "error",
-      "windows"
-    ],
     "quotes": [  //强制使用一致的反勾号、双引号或单引号
       "error",
       "single"

@@ -8,7 +8,7 @@ import { CHECK_LOGIN } from '../constants/ActionTypes';
 
 const initialState = {
     isLogin: false
-};
+}; 
 
 const background = (state = initialState, action) => {
     switch (action.type) {

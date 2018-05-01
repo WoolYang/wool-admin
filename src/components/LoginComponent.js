@@ -7,8 +7,9 @@ const FormItem = Form.Item;
 require('styles//Login.less');
 
 class componentName extends Component {
+  
   static propTypes = {
-    prop: PropTypes
+    props: PropTypes
   }
   state = {
     isPass: false
