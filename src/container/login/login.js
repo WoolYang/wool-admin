@@ -1,5 +1,10 @@
 import React from 'react';
-import { Row, Col, Form, Icon, Input, Button, Checkbox, message } from 'antd';
+import { Row, Col, Form, Icon, Input, Button, message } from 'antd';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { login } from '../../actions/login';
+
 import './login.less';
 
 const FormItem = Form.Item;
@@ -10,7 +15,14 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                message.info('成功登录！');
+                this.props.login(values).payload.then(res => {
+                    if (res.code == 200) {
+                        message.info('登录成功！');
+                    } else {
+                        message.error('登录失败！');
+                    }
+                });
+
             }
         });
     }
@@ -21,7 +33,7 @@ class Login extends React.Component {
                 <Col span="6">
                     <Form onSubmit={this.handleSubmit} className="login-form">
                         <FormItem>
-                            {getFieldDecorator('companyname', {
+                            {getFieldDecorator('name', {
                                 rules: [{ required: true, message: '请输入用户名!' }],
                             })(
                                 <Input prefix={<Icon type="user" style={{ color: 'rgba(0, 0, 0, .25)' }} />} placeholder="admin" />
@@ -44,4 +56,12 @@ class Login extends React.Component {
     }
 }
 
-export default Form.create()(Login); 
+const mapStateToProps = state => ({
+    login: state.login
+});
+
+const mapDispatchToProps = dispatch => ({
+    login: bindActionCreators(login, dispatch)
+});
+
+export default Form.create()(connect(mapStateToProps, mapDispatchToProps)(Login)); 

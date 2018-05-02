@@ -3,15 +3,11 @@
  */
 import { combineReducers } from 'redux';
 import count from './count';
-import cart from './cart';
-import history from './history';
-import background from './background';
+import login from './login';
 
 const counts = combineReducers({
     count,
-    cart,
-    history,
-    background
+    login
 });
 
 export default counts;

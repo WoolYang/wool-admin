@@ -28,6 +28,7 @@ module.exports = {
   "parser": "babel-eslint",
   "rules": {
     "indent": [2, 4], //缩进
+    "no-case-declarations": 0, //关闭禁止词法声明
     "no-unused-vars": 1,
     "no-console": 1,
     "strict": 0,  //严格模式
