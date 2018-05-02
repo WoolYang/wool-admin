@@ -13,7 +13,6 @@ class Login extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         const { getFieldDecorator } = this.props.form;
         return (
             <Row className="login-row" type="flex" justify="space-around" align="middle">
