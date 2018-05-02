@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import Routes from './routes/routes';
 
-import 'antd/dist/antd.less';
+import './styles/base.less';
 
 import { getAllProducts } from './actions';
 
