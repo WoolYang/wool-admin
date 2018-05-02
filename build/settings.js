@@ -18,7 +18,7 @@ module.exports = {
         autoOpenBrowser: true, //是否自动打开浏览器
         assetsSubDirectory: '', //生成资源路径二级
         assetsPublicPath: '', //生成资源路径
-        sourceMap: 'eval-source-map', //生成映射文件
+        sourceMap: 'source-map', //生成映射文件
         proxyTable: {} //代理
     }
 };

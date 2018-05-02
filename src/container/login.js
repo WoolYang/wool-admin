@@ -1,17 +1,18 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col, Icon, Checkbox } from 'antd';
-const FormItem = Form.item;
-class Login extends React.Component {
+import { Row, Col, Form, Icon, Input, Button, Checkbox, message } from 'antd';
+
+const FormItem = Form.Item;
+
+class componentName extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
+                message.info('成功登录！');
             }
         });
     }
-
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
@@ -19,17 +20,17 @@ class Login extends React.Component {
                 <Col span="8">
                     <Form onSubmit={this.handleSubmit} className="login-form">
                         <FormItem>
-                            {getFieldDecorator('userName', {
-                                rules: [{ required: true, message: 'Please input your username!' }],
+                            {getFieldDecorator('companyname', {
+                                rules: [{ required: true, message: '请输入用户名!' }],
                             })(
-                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0, 0, 0, .25)' }} />} placeholder="请输入用户名" />
                             )}
                         </FormItem>
                         <FormItem>
                             {getFieldDecorator('password', {
-                                rules: [{ required: true, message: 'Please input your Password!' }],
+                                rules: [{ required: true, message: '请输入密码!' }],
                             })(
-                                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0, 0, 0, .25)' }} />} type="password" placeholder="请输入密码" />
                             )}
                         </FormItem>
                         <FormItem>
@@ -37,13 +38,10 @@ class Login extends React.Component {
                                 valuePropName: 'checked',
                                 initialValue: true,
                             })(
-                                <Checkbox>Remember me</Checkbox>
+                                <Checkbox>记住我</Checkbox>
                             )}
-                            <a className="login-form-forgot" href="">Forgot password</a>
-                            <Button type="primary" htmlType="submit" className="login-form-button">
-                                Log in
-                            </Button>
-                            Or <a href="">register now!</a>
+                            <a className="login-form-forgot" href=""> 忘记密码 </a>
+                            <Button type="primary" htmlType="submit" className="login-form-button">登 录</Button>
                         </FormItem>
                     </Form>
                 </Col>
@@ -52,6 +50,4 @@ class Login extends React.Component {
     }
 }
 
-const WrappedLogin = Form.create()(Login);
-
-export default WrappedLogin;
+export default Form.create()(componentName); 
