@@ -1,8 +1,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '../containers/login/login';
-import Main from '../containers/main';
+import Login from 'containers/login/login';
+import Main from 'containers/main/main';
 
 class Routes extends React.Component {
     render() {
@@ -10,7 +10,7 @@ class Routes extends React.Component {
             <Router>
                 <Switch>
                     <Route path="/login" component={Login} />
-                    <Route path="/index" component={Main} />
+                    <Route path="/" component={Main} />
                 </Switch>
             </Router>
         );

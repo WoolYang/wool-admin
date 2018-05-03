@@ -14,10 +14,9 @@ module.exports = {
         alias: {
             actions: `${settings.common.srcPath}/actions/`,
             components: `${settings.common.srcPath}/components/`,
-            sources: `${settings.common.srcPath}/sources/`,
-            stores: `${settings.common.srcPath}/stores/`,
-            styles: `${settings.common.srcPath}/styles/`,
-            config: `${settings.common.srcPath}/config/` + process.env.NODE_ENV
+            containers: `${settings.common.srcPath}/containers/`,
+            reducers: `${settings.common.srcPath}/reducers/`,
+            sagas: `${settings.common.srcPath}/sagas/`
         }
     },
     module: {

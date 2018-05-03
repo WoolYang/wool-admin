@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Row, Col, Form, Icon, Input, Button, message, Alert } from 'antd';
 
-import { loginRequest } from '../../actions/login';
+import { loginRequest } from 'actions/login';
 
 import './login.less';
 
@@ -23,7 +23,7 @@ class Login extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.login.data&&nextProps.login.data.code == 200) {
             message.success(nextProps.login.data.msg);
-            this.props.history.push('/index');
+            this.props.history.push('/');
         }
     }
 

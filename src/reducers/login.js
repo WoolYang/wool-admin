@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/login';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from 'actions/login';
 
 const initialState = {
     data: null,      //登陆返回信息
