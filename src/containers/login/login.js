@@ -1,7 +1,7 @@
 import React from 'react';
-import { Row, Col, Form, Icon, Input, Button, message } from 'antd';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Row, Col, Form, Icon, Input, Button, message, Alert } from 'antd';
 
 import { loginRequest } from '../../actions/login';
 
@@ -9,13 +9,21 @@ import './login.less';
 
 const FormItem = Form.Item;
 
+const mapStateToProps = state => ({
+    login: state.login
+});
+
+const mapDispatchToProps = dispatch => ({
+    loginRequest: bindActionCreators(loginRequest, dispatch)
+});
+
+@connect(mapStateToProps, mapDispatchToProps)
 class Login extends React.Component {
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.login.data == 200) {
-            message.success('登录成功！');
-        } else if (nextProps.login.error != null) {
-            message.error('登录失败！');
+        if (nextProps.login.data&&nextProps.login.data.code == 200) {
+            message.success(nextProps.login.data.msg);
+            this.props.history.push('/index');
         }
     }
 
@@ -30,6 +38,8 @@ class Login extends React.Component {
 
     render() {
         const { getFieldDecorator } = this.props.form;
+        const { error } = this.props.login;
+
         return (
             <Row className="login" type="flex" justify="space-around" align="middle">
                 <Col span="6">
@@ -51,6 +61,9 @@ class Login extends React.Component {
                         <FormItem>
                             <Button type="primary" htmlType="submit" className="btn-login">登 录</Button>
                         </FormItem>
+                        <FormItem className={error==null ? 'vh' : 'vv'} >
+                            <Alert message={error&&error.msg} type="error" showIcon />
+                        </FormItem>
                     </Form>
                 </Col>
             </Row>
@@ -58,12 +71,4 @@ class Login extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    login: state.login
-});
-
-const mapDispatchToProps = dispatch => ({
-    loginRequest: bindActionCreators(loginRequest, dispatch)
-});
-
-export default Form.create()(connect(mapStateToProps, mapDispatchToProps)(Login)); 
+export default Form.create()(Login); 

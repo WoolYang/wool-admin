@@ -8,10 +8,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './styles/base.less';
 
-//import { getAllProducts } from './actions';
-
-//store.dispatch(getAllProducts());
-
 const render = Component => {
     ReactDOM.render(
         <Provider store={store} >
