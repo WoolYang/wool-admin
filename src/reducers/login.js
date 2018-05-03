@@ -1,7 +1,7 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, RECEIVE_CHECK_LOGIN } from '../constants/ActionTypes';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/login';
 
 const initialState = {
-    loginData: null,      //登陆返回信息
+    data: null,      //登陆返回信息
     fetching: false,
     fetched: false,
     error: null
@@ -9,7 +9,7 @@ const initialState = {
 
 const login = (state = initialState, action) => {
     switch (action.type) {
-    case LOGIN_START:
+    case LOGIN_REQUEST:
         return {
             ...state,
             fetching: true
@@ -19,7 +19,7 @@ const login = (state = initialState, action) => {
             ...state,
             fetching: false,
             fetched: true,
-            loginData: action.payload
+            data: action.payload
         };
     case LOGIN_FAILURE:
         return {

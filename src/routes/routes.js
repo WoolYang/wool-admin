@@ -1,8 +1,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '../container/login/login';
-import Main from '../container/main';
+import Login from '../containers/login/login';
+import Main from '../containers/main';
 
 class Routes extends React.Component {
     render() {

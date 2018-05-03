@@ -1,13 +1,9 @@
-/**
- * Created by Administrator on 2017/5/12.
- */
 import { combineReducers } from 'redux';
-import count from './count';
+//import count from './count';
 import login from './login';
 
-const counts = combineReducers({
-    count,
+const reducer = combineReducers({
     login
 });
 
-export default counts;
+export default reducer;

@@ -1,4 +1,4 @@
-
+/* 
 import * as types from '../constants/ActionTypes';
 
 export const checkLogin = (params) => ({
@@ -43,4 +43,4 @@ export const addhistory = (order, id) => ({
     order: order
 });
 
-
+ */

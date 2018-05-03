@@ -4,11 +4,13 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import Routes from './routes/routes';
 
+import registerServiceWorker from './registerServiceWorker';
+
 import './styles/base.less';
 
-import { getAllProducts } from './actions';
+//import { getAllProducts } from './actions';
 
-store.dispatch(getAllProducts());
+//store.dispatch(getAllProducts());
 
 const render = Component => {
     ReactDOM.render(
@@ -20,3 +22,5 @@ const render = Component => {
 };
 
 render(Routes);
+
+registerServiceWorker();
