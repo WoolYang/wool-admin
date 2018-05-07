@@ -7,9 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    dashboardRequest: ()=>{
-        dispatch({type: 'dashboardRequest'});
-    }
+    dashboardRequest: ()=> dispatch({type: 'dashboardRequest'})
+    
 });
 
 @connect(mapStateToProps, mapDispatchToProps)
