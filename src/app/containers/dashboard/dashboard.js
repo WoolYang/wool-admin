@@ -8,13 +8,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     dashboardRequest: ()=> dispatch({type: 'dashboardRequest'})
-    
 });
 
 @connect(mapStateToProps, mapDispatchToProps)
 class Dashboard extends React.Component {
 
     componentDidMount(){
+        console.log(this.props);
         this.props.dashboardRequest();
     }
 

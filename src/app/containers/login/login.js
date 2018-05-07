@@ -1,9 +1,6 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Row, Col, Form, Icon, Input, Button, message, Alert } from 'antd';
-
-import { loginRequest } from 'actions/login';
 
 import './login.less';
 
@@ -14,7 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    loginRequest: bindActionCreators(loginRequest, dispatch)
+    loginRequest: (params)=> dispatch({type: 'loginRequest',payload: params})
 });
 
 @connect(mapStateToProps, mapDispatchToProps)
