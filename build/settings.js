@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
     common: {
         additionalPaths: [], //babel解析附加路径
-        entryPath: path.join(__dirname, '../src/index'), //入口文件路径
+        entryPath: path.join(__dirname, '../src/app/index'), //入口文件路径
         srcPath: path.join(__dirname, '/../src'), //src根目录路径
         assetsRoot: path.join(__dirname, '/../dist/assets'), //出口文件路径
     },
