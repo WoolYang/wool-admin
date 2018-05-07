@@ -61,7 +61,7 @@ class Woox {
 
             const namespace = current.namespace;
 
-            if (namespace === void 666) {
+            if (namespace === void 233) {
                 throw new SyntaxError('module needs a namespace');
             }
             if (this.appReducers[namespace]) {
