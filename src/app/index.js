@@ -1,4 +1,4 @@
-import { App } from '../woox/index';
+import { App } from 'woox';
 import Routes from './routes/routes';
 import * as Models from './models/index';
 import '../styles/base.less';
@@ -6,4 +6,4 @@ import '../styles/base.less';
 App.router(Routes);
 App.model(Models);
 
-App.run(document.getElementById('app'),true);
+App.run(document.getElementById('app'), true);

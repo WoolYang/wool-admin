@@ -63,7 +63,8 @@
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "woox": "^0.0.2"
   },
   "browserslist": [
     "> 1%",
