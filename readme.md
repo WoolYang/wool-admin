@@ -1,3 +1,3 @@
-## wool-cli
-用于react工程构建，最新脚手架
+## wool-admin
+admin系统,基于antd+react+redux+redux-saga
 
